@@ -45,7 +45,13 @@ const HomePage = () => {
                     most gave hope. Secure active living depend son repair day ladies now.
                 </p>
             </About>
-            <Parallax bgImage={images.maskBG} bgImageAlt="Marble background" strength={250} className="best">
+            <Parallax
+                bgImage={images.maskBG}
+                bgImageAlt="Marble background"
+                bgClassName="best__background"
+                strength={230}
+                className="best"
+            >
                 <section className="best__container">
                     <h2 className="best__subtitle subtitle">Our best</h2>
                     <div className="best__body">

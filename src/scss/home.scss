@@ -79,6 +79,10 @@
         z-index: 2;
     }
 
+    &__background {
+        top: rem(-50);
+    }
+
     &__subtitle {
         text-align: center;
         &:not(:last-child) {
