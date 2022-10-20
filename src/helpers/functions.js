@@ -26,7 +26,7 @@ export let isMobile = {
 };
 
 export function fullVHfix() {
-    if (isMobile.any() && document.querySelectorAll("[data-fullscreen]").length) {
+    if (isMobile.any()) {
         document.documentElement.classList.add("touch");
         const fixHeight = () => {
             document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
