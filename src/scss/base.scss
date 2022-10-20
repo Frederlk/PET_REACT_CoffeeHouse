@@ -17,3 +17,10 @@
         object-fit: cover;
     }
 }
+
+.spinner {
+    padding: 20vh 0;
+    svg {
+        max-width: 60%;
+    }
+}
