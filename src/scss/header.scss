@@ -1,0 +1,50 @@
+.header {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	@include adaptiveValue("height", 95, 50);
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	padding: rem(5) rem(0);
+	&__container {
+		flex: 1 1 100%;
+		display: flex;
+		align-items: flex-end;
+		@include adaptiveValue("gap", 40, 30);
+	}
+
+	&__logo {
+	}
+
+	&__menu {
+	}
+}
+.menu {
+	&__body {
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("gap", 40, 20);
+		flex-wrap: wrap;
+	}
+
+	&__item {
+	}
+
+	&__link {
+		@include adaptiveValue("font-size", 12, 14, 767.98, 320, 1);
+		line-height: math.div(17, 12);
+		color: $white;
+		text-shadow: 0px rem(4) rem(4) rgba(0, 0, 0, 0.25);
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: rgba(255, 255, 255, 0.5);
+			}
+		}
+	}
+}

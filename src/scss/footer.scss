@@ -1,0 +1,46 @@
+.footer {
+    padding-top: rem(30);
+    padding-bottom: rem(20);
+    &__container {
+        text-align: center;
+    }
+
+    &__top {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        @include adaptiveValue("gap", 40, 30);
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__logo {
+    }
+
+    &__body {
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("gap", 40, 20);
+        flex-wrap: wrap;
+    }
+
+    &__item {
+    }
+
+    &__link {
+        @include adaptiveValue("font-size", 12, 14, 767.98, 320, 1);
+        line-height: math.div(17, 12);
+        color: $mainColor;
+        text-shadow: 0px rem(4) rem(4) rgba(0, 0, 0, 0);
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                text-shadow: 0px rem(4) rem(4) rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}

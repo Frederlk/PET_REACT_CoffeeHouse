@@ -1,0 +1,436 @@
+.logo {
+    svg {
+        fill: $white;
+        transition: all 0.3s ease 0s;
+    }
+
+    span {
+        @media (max-width: $mobileSmall) {
+            display: none;
+        }
+        transition: all 0.3s ease 0s;
+        font-size: rem(12);
+        line-height: math.div(17, 12);
+        color: $white;
+        text-shadow: 0px rem(4) rem(4) rgba(0, 0, 0, 0.25);
+        margin-left: rem(-4);
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            svg {
+                fill: rgba(255, 255, 255, 0.5);
+            }
+            span {
+                color: rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+
+    .footer & {
+        svg {
+            fill: $mainColor;
+        }
+        span {
+            text-shadow: 0px rem(4) rem(4) rgba(0, 0, 0, 0);
+            color: $mainColor;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                span {
+                    text-shadow: 0px rem(4) rem(4) rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+    }
+}
+
+.title {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 40, 30);
+    line-height: math.div(58, 40);
+    color: $white;
+    text-shadow: 0px rem(4) rem(4) rgba(0, 0, 0, 0.25);
+}
+
+.subtitle {
+    font-size: rem(24);
+    line-height: math.div(35, 24);
+    font-size: rem(24);
+}
+
+.separator {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(25);
+    justify-content: center;
+    &__line {
+        width: rem(60);
+        flex: 0 1 rem(60);
+        height: rem(1);
+        background-color: $mainColor;
+        box-shadow: 0px rem(2) rem(4) rgba(0, 0, 0, 0.25);
+        .white & {
+            background-color: $white;
+        }
+    }
+
+    &__svg {
+        flex: 0 0 rem(30);
+        filter: drop-shadow(0px rem(4) rem(4) rgba(0, 0, 0, 0.25));
+        .white & {
+            svg {
+                fill: $white;
+            }
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.about {
+    @include adaptiveValue("padding-top", 70, 40);
+    @include adaptiveValue("padding-bottom", 120, 60);
+    &_home {
+        @include adaptiveValue("padding-top", 80, 40);
+        @include adaptiveValue("padding-bottom", 100, 60);
+        margin-bottom: 0;
+    }
+
+    &__container {
+    }
+    &__body {
+        display: flex;
+        @include adaptiveValue("gap", 80, 30);
+        justify-content: center;
+        position: relative;
+        .about__content {
+            margin: 0;
+            @media (min-width: em(650)) {
+                padding: rem(10) 0px;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            @include adaptiveValue("width", 240, 60);
+            height: rem(1);
+            @include adaptiveValue("bottom", -60, -30);
+            left: 50%;
+            background-color: $mainColor;
+            transform: translate(-50%, 0px);
+        }
+    }
+
+    &__image-ibg {
+        flex: 0 0 rem(272);
+        max-height: rem(355);
+        img {
+            object-position: top;
+        }
+        @media (max-width: em(650)) {
+            padding-bottom: 50%;
+            min-height: rem(250);
+            &:not(:last-child) {
+                margin-bottom: rem(20);
+            }
+        }
+    }
+
+    &__content {
+        text-align: center;
+        margin: 0px auto;
+        max-width: rem(600);
+
+        .about__body & {
+            @media (min-width: em(360)) {
+                max-width: rem(346);
+            }
+        }
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__separator {
+        &:not(:last-child) {
+            margin-bottom: rem(25);
+        }
+    }
+
+    &__text {
+        line-height: math.div(20, 14);
+        p {
+            &:not(:last-child) {
+                margin-bottom: em(20, 14);
+            }
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.card {
+    padding: rem(20);
+    border-radius: rem(8);
+    box-shadow: rem(5) rem(5) rem(15) rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease 0s;
+    display: flex;
+    flex-direction: column;
+    gap: rem(15);
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow: rem(5) rem(5) rem(35) rgba(0, 0, 0, 0.25);
+        }
+    }
+    &_best {
+        background-color: rgba(255, 255, 255, 0.65);
+        box-shadow: none;
+        gap: rem(10);
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: none;
+                background-color: $white;
+            }
+        }
+    }
+
+    &__image-ibg {
+        display: inline-flex;
+        padding-bottom: percent(115, 167);
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: rem(15);
+        font-size: rem(14);
+        text-align: right;
+        line-height: math.div(20, 14);
+        color: $mainColor;
+        .card_best & {
+            gap: rem(10);
+        }
+    }
+
+    &__title {
+        flex: 1 1 auto;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                text-shadow: 0px rem(4) rem(4) rgba(0, 0, 0, 0.25);
+            }
+        }
+        @media (max-width: em(500)) {
+            font-size: rem(18);
+        }
+    }
+
+    &__country {
+    }
+
+    &__price {
+        font-weight: 700;
+    }
+}
+
+//========================================================================================================================================================
+
+.top {
+    position: relative;
+    &__content {
+        position: relative;
+        z-index: 2;
+        @include adaptiveValue("min-height", 260, 160);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include adaptiveValue("padding-top", 130, 80);
+        @include adaptiveValue("padding-bottom", 70, 30);
+    }
+
+    &__container {
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+    &__bg {
+        height: rem(320) !important;
+    }
+}
+
+//========================================================================================================================================================
+
+.catalog {
+    padding-bottom: rem(30);
+    &__container {
+    }
+
+    &__top {
+        display: flex;
+        justify-content: center;
+        @include adaptiveValue("gap", 80, 20, 991.98, 767.98, 1);
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 60, 30);
+        }
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+        }
+        @media (max-width: $mobileSmall) {
+            gap: rem(25);
+        }
+    }
+
+    &__search,
+    &__filter {
+        display: flex;
+        align-items: center;
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 100%;
+            flex-wrap: wrap;
+            gap: rem(10) !important;
+        }
+    }
+
+    &__search {
+        gap: rem(20);
+    }
+
+    &__label {
+        line-height: math.div(20, 14);
+    }
+
+    &__input {
+        font-size: rem(12);
+        line-height: math.div(17, 12);
+        text-align: center;
+        color: rgba(0, 0, 0, 0.5);
+
+        min-height: rem(30);
+        min-width: rem(180);
+        padding: rem(5) rem(20);
+        background-color: $white;
+        box-shadow: rem(4) rem(4) rem(20) rgba(0, 0, 0, 0.25);
+        border-radius: rem(4);
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 100%;
+        }
+        &._form-focus {
+            color: $mainColor;
+        }
+    }
+
+    &__filter {
+        @include adaptiveValue("gap", 35, 20, 991.98, 767.98, 1);
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: rem(5);
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 auto;
+        }
+    }
+
+    &__button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: rem(5) rem(10);
+        min-height: rem(30);
+        min-width: rem(75);
+        box-shadow: rem(4) rem(4) rem(20) rgba(0, 0, 0, 0.25);
+        background-color: $white;
+        transition: box-shadow 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: rem(4) rem(4) rem(35) rgba(0, 0, 0, 0.25);
+            }
+        }
+        &:first-child {
+            border-radius: rem(4) 0px 0px rem(4);
+        }
+        &:last-child {
+            border-radius: 0 rem(4) rem(4) 0;
+        }
+        @media (max-width: $mobileSmall) {
+            min-width: 0;
+            flex: 1 1 auto;
+        }
+    }
+    &__body {
+        display: grid;
+        @include adaptiveValue("gap", 70, 30, 991.98, 767.98, 1);
+        grid-template-columns: repeat(auto-fit, minmax(rem(220), 0.33fr));
+        @media (max-width: $mobile) {
+            grid-template-columns: repeat(auto-fit, minmax(rem(220), 0.5fr));
+        }
+        @media (max-width: em(500)) {
+            grid-template-columns: repeat(auto-fit, minmax(rem(220), 1fr));
+        }
+    }
+
+    &__card {
+    }
+}
+
+//========================================================================================================================================================
+
+.product {
+    @include adaptiveValue("padding-top", 70, 40);
+    padding-bottom: rem(30);
+    &__container {
+        display: flex;
+        @include adaptiveValue("gap", 55, 30, 991.98, 767.98, 1);
+    }
+
+    &__image-ibg {
+        flex: 0 0 percent(390, 880);
+        box-shadow: rem(5) rem(5) rem(30) rgba(0, 0, 0, 0.25);
+        max-height: rem(400);
+    }
+
+    &__body {
+        padding: rem(10) 0px rem(30) 0px;
+        flex: 1 1 auto;
+    }
+
+    &__title {
+        text-align: center;
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__separatopr {
+        display: flex;
+        &:not(:last-child) {
+            margin-bottom: rem(25);
+        }
+    }
+
+    &__label {
+        line-height: math.div(20, 14);
+        span {
+            font-weight: 700;
+        }
+        &:not(:last-child) {
+            margin-bottom: rem(15);
+        }
+        &_price {
+            font-weight: 400 !important;
+            font-size: rem(24);
+            line-height: math.div(35, 24);
+        }
+    }
+}
