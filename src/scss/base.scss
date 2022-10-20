@@ -19,5 +19,15 @@
 }
 
 .spinner {
-    padding: 20vh 0;
+    text-align: center;
+    margin: 20vh auto;
+    @include adaptiveValue("width", 400, 150, 991.98, 479.98, 1);
+    @include adaptiveValue("heigth", 300, 150, 991.98, 479.98, 1);
+    max-width: 60%;
+    svg {
+        max-width: 100%;
+        circle {
+            fill: $mainColor;
+        }
+    }
 }
