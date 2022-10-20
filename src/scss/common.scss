@@ -119,6 +119,10 @@
             background-color: $mainColor;
             transform: translate(-50%, 0px);
         }
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+        }
     }
 
     &__image-ibg {
@@ -392,12 +396,19 @@
     &__container {
         display: flex;
         @include adaptiveValue("gap", 55, 30, 991.98, 767.98, 1);
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+        }
     }
 
     &__image-ibg {
         flex: 0 0 percent(390, 880);
         box-shadow: rem(5) rem(5) rem(30) rgba(0, 0, 0, 0.25);
         max-height: rem(400);
+        @media (max-width: $mobile) {
+            @include adaptiveValue("min-height", 400, 250, 767.98, 320, 1);
+        }
     }
 
     &__body {
